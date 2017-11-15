@@ -28,7 +28,8 @@ public class StudyingProgramming {
 	public static void main(String[] args) {
 
 		// Array to be used with 2(3) element CodingBat excercises...
-		int[] twoElementArray = { 10, 15, 20 };
+		int[] twoElementArray = { 1, 3, 4 };
+		int[] anArray = { 1, 3, 4 };
 
 		StudyingProgramming sp = new StudyingProgramming();
 
@@ -65,7 +66,8 @@ public class StudyingProgramming {
 		System.out.println();
 
 		System.out.println("- unlucky1 -");
-		System.out.println(sp.unlucky1(twoElementArray));
+		System.out.println(Arrays.toString(twoElementArray));
+		System.out.println(sp.unlucky1(anArray));
 		System.out.println();
 
 		System.out.println("- sameEnds -");
