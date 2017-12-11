@@ -27,9 +27,15 @@ public class StudyingProgramming {
 
 	public static void main(String[] args) {
 
-		// Array to be used with 2(3) element CodingBat excercises...
-		int[] twoElementArray = { 1, 3, 4 };
-		int[] anArray = { 1, 3, 4 };
+		int[] firstLast6 = { 1, 2, 3 };
+		int[] sameFirstLast = { 1, 2, 1 };
+		int[] rotateLeft3 = { 1, 2, 5 };
+		int[] swapEnds = { 1, 5, 6, 7, 4, 3, 4 };
+		int[] unlucky1 = { 1, 3, 4, 5, 6, 7 };
+		int[] sameEnds = { 1, 11, 2, 12, 3, 30 };
+		int[] replaceWithTwo = { 5, 5, 5, 1, 1, 5, 2, 5 };
+		int[] divideByTen = { 1, 10, 2, 20 };
+		int[] findSmallestNumber = { 10, 100, 20, 30, 40, 50 };
 
 		StudyingProgramming sp = new StudyingProgramming();
 
@@ -41,16 +47,16 @@ public class StudyingProgramming {
 		System.out.println(sp.helloUser("Andreas"));
 		System.out.println();
 
-		System.out.println("- HTMLelement -'");
+		System.out.println("- HTMLelement -");
 		System.out.println(sp.HTMLelement("h1", "Andreas"));
 		System.out.println();
 
 		System.out.println("- firstLast6 -");
-		System.out.println(sp.firstLast6(twoElementArray));
+		System.out.println(sp.firstLast6(firstLast6));
 		System.out.println();
 
 		System.out.println("- sameFirstLast -");
-		System.out.println(sp.sameFirstLast(twoElementArray));
+		System.out.println(sp.sameFirstLast(sameFirstLast));
 		System.out.println();
 
 		System.out.println("- makePi -");
@@ -58,20 +64,31 @@ public class StudyingProgramming {
 		System.out.println();
 
 		System.out.println("- rotateLeft3 -");
-		System.out.println(Arrays.toString(sp.rotateLeft3(twoElementArray)));
+		System.out.println(Arrays.toString(sp.rotateLeft3(rotateLeft3)));
 		System.out.println();
 
 		System.out.println("- swapEnds -");
-		System.out.println(Arrays.toString(sp.swapEnds(twoElementArray)));
+		System.out.println(Arrays.toString(sp.swapEnds(swapEnds)));
 		System.out.println();
 
 		System.out.println("- unlucky1 -");
-		System.out.println(Arrays.toString(twoElementArray));
-		System.out.println(sp.unlucky1(anArray));
+		System.out.println(sp.unlucky1(unlucky1));
 		System.out.println();
 
 		System.out.println("- sameEnds -");
-		System.out.println(sp.sameEnds(twoElementArray, 3));
+		System.out.println(sp.sameEnds(sameEnds, 2));
+		System.out.println();
+
+		System.out.println("- replaceWithTwo -");
+		System.out.println(Arrays.toString(sp.replaceWithTwo(replaceWithTwo)));
+		System.out.println();
+
+		System.out.println("- divideByTen -");
+		System.out.println(sp.divideByTen(divideByTen));
+		System.out.println();
+
+		System.out.println("- findSmallestNumber -");
+		System.out.println(sp.findSmallestNumber(findSmallestNumber));
 		System.out.println();
 	}
 
@@ -165,5 +182,44 @@ public class StudyingProgramming {
 		}
 		return true;
 	}
+
+	public boolean is5InArray(int[] numbers) {
+		for (int number : numbers) {
+			if (number == 5) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int[] replaceWithTwo(int[] numbers) {
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] == 5) {
+				numbers[i] = 2;
+			}
+		}
+		return numbers;
+	}
+
+	public boolean divideByTen(int[] numbers) {
+		for (int number : numbers) {
+			if (number % 10 == 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int findSmallestNumber(int[] numbers) {
+		int smallestNumber = numbers[0];
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] < smallestNumber) {
+				smallestNumber = numbers[i];
+			}
+		}
+		return smallestNumber;
+	}
+	
+	
 
 }
