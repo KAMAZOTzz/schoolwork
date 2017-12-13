@@ -23,6 +23,8 @@ package studying.programming;
 
 import java.util.Arrays;
 
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 public class StudyingProgramming {
 
 	public static void main(String[] args) {
@@ -36,6 +38,10 @@ public class StudyingProgramming {
 		int[] replaceWithTwo = { 5, 5, 5, 1, 1, 5, 2, 5 };
 		int[] divideByTen = { 1, 10, 2, 20 };
 		int[] findSmallestNumber = { 10, 100, 20, 30, 40, 50 };
+		int[] findEvenNumbers = { 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 33, 53 };
+
+		String[] replaceFirstTwoWords = { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+				"Ten" };
 
 		StudyingProgramming sp = new StudyingProgramming();
 
@@ -89,6 +95,14 @@ public class StudyingProgramming {
 
 		System.out.println("- findSmallestNumber -");
 		System.out.println(sp.findSmallestNumber(findSmallestNumber));
+		System.out.println();
+
+		System.out.println("- replaceFirstTwoWords -");
+		System.out.println(Arrays.toString(sp.replaceFirstTwoWords(replaceFirstTwoWords, "Aaa", "Bbb")));
+		System.out.println();
+		
+		System.out.println("- findEvenNumbers -");
+		System.out.println(Arrays.toString(sp.findEvenNumbers(findEvenNumbers)));
 		System.out.println();
 	}
 
@@ -219,7 +233,27 @@ public class StudyingProgramming {
 		}
 		return smallestNumber;
 	}
-	
-	
+
+	public String[] replaceFirstTwoWords(String[] words, String firstWord, String secondWord) {
+		for (int i = 0; i < words.length; i++) {
+			if (words[i] == words[0]) {
+				words[0] = firstWord;
+			}
+			if (words[i] == words[1]) {
+				words[1] = secondWord;
+			}
+		}
+		return words;
+	}
+
+	public int[] findEvenNumbers(int[] numbers) {
+		for (int i = 0; i < numbers.length; i++) {
+			if (i % 2 == 0) {
+				int evenNumbers = 0;
+				evenNumbers++;
+			}
+		}
+		return numbers;
+	}
 
 }
