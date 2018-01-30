@@ -27,6 +27,8 @@ public class StudyingProgramming {
 		String[] ifWordStartsWithB = { "Blyad", "Cyka", "Yrod" };
 
 		StudyingProgramming sp = new StudyingProgramming();
+		
+		System.out.println();
 
 		System.out.println("- gradeSystem -");
 		System.out.println(sp.gradeSystem(5));
@@ -90,6 +92,8 @@ public class StudyingProgramming {
 
 		System.out.println("- ifWordStartsWithB -");
 		System.out.println(sp.ifWordStartsWithB(ifWordStartsWithB));
+		System.out.println();
+		
 		System.out.println();
 	}
 
