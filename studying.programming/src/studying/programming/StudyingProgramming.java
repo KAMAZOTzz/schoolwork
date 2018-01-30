@@ -22,14 +22,17 @@
 package studying.programming;
 
 import java.util.Arrays;
-
-import javax.swing.text.StyledEditorKit.ForegroundAction;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StudyingProgramming {
 
 	public static void main(String[] args) {
 
-		int[] firstLast6 = { 1, 2, 3 };
+		Map<String, String> map = new HashMap<String, String>();
+		Map<String, Integer> map1 = new HashMap<String, Integer>();
+		
+		int[] firstLast6 = { 1, 2, 3  };
 		int[] sameFirstLast = { 1, 2, 1 };
 		int[] rotateLeft3 = { 1, 2, 5 };
 		int[] swapEnds = { 1, 5, 6, 7, 4, 3, 4 };
@@ -42,6 +45,7 @@ public class StudyingProgramming {
 
 		String[] replaceFirstTwoWords = { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
 				"Ten" };
+		String[] ifWordStartsWithB = { "Blyad", "Cyka", "Yrod" };
 
 		StudyingProgramming sp = new StudyingProgramming();
 
@@ -100,9 +104,13 @@ public class StudyingProgramming {
 		System.out.println("- replaceFirstTwoWords -");
 		System.out.println(Arrays.toString(sp.replaceFirstTwoWords(replaceFirstTwoWords, "Aaa", "Bbb")));
 		System.out.println();
-		
+
 		System.out.println("- findEvenNumbers -");
 		System.out.println(Arrays.toString(sp.findEvenNumbers(findEvenNumbers)));
+		System.out.println();
+
+		System.out.println("- ifWordStartsWithB -");
+		System.out.println(sp.ifWordStartsWithB(ifWordStartsWithB));
 		System.out.println();
 	}
 
@@ -246,14 +254,77 @@ public class StudyingProgramming {
 		return words;
 	}
 
+	// A bit broken right now.
 	public int[] findEvenNumbers(int[] numbers) {
+		int evenNumbers = 0;
 		for (int i = 0; i < numbers.length; i++) {
-			if (i % 2 == 0) {
-				int evenNumbers = 0;
+			if (numbers[i] % 2 == 0) {
 				evenNumbers++;
 			}
 		}
 		return numbers;
 	}
 
+	public boolean ifWordStartsWithB(String[] words) {
+		String firstElement = words[0];
+		for (int i = 0; i < words.length; i++) {
+			if (firstElement.startsWith("b") | firstElement.startsWith("B")) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public Map<String, String> mapBully(Map<String, String> map) {
+		if (map.containsKey("a")) {
+			map.put("b", map.get("a"));
+			map.put("a", "");
+		}
+		return map;
+	}
+
+	public Map<String, String> mapShare(Map<String, String> map) {
+		if (map.containsKey("a")) {
+			map.put("b", map.get("a"));
+		}
+		map.remove("c");
+		return map;
+	}
+
+	public Map<String, String> mapAB(Map<String, String> map) {
+		if (map.containsKey("a") && map.containsKey("b")) {
+			String str = map.get("a") + map.get("b");
+			map.put("ab", str);
+		}
+		return map;
+	}
+
+	public Map<String, String> topping1(Map<String, String> map) {
+		if (map.containsKey("ice cream")) {
+			map.put("ice cream", "cherry");
+		}
+		map.put("bread", "butter");
+		return map;
+	}
+
+	public Map<String, String> topping2(Map<String, String> map) {
+		if (map.containsKey("ice cream")) {
+			map.put("yogurt", map.get("ice cream"));
+		}
+		if (map.containsKey("spinach")) {
+			map.put("spinach", "nuts");
+		}
+		return map;
+	}
+
+	public Map<String, String> topping3(Map<String, String> map) {
+		if (map.containsKey("potato")) {
+			map.put("fries", map.get("potato"));
+		}
+		if (map.containsKey("salad")) {
+			map.put("spinach", map.get("salad"));
+		}
+		return map;
+	}
+	
 }
